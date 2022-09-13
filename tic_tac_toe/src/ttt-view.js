@@ -4,7 +4,7 @@ class View {
     this.el = el;
   }
 
-  setupBoard(el) {
+  setupBoard() {
     //const board = document.querySelector('.ttt');
     let board = document.getElementsByClassName(el);
     let boardPositions = [
@@ -18,12 +18,17 @@ class View {
       [2, 1], 
       [2, 2]
     ];
+    // board.setAttribute("ul")
+    let ul = document.createElement("ul")
+
+    
 
     boardPositions.forEach((pos) => {
       let li = document.createElement("li");
       li.innerText = pos;
       li.dataset.id = `${[pos]}`;
-      board.appendChild(li);
+      ul.appendChild(li);
+      board.appendChild(ul);
     });
   
     // DataTransfer.forEach((pos) => {
@@ -50,9 +55,9 @@ class View {
 
 
 
-View.prototype.setupBoard = function() {
+// View.prototype.setupBoard = function() {
   
-}
+// }
 
 
 
